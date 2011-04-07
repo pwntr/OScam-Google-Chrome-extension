@@ -1,0 +1,18 @@
+{
+  "name": "OScam Chrome Extension",
+  "version": "0.1",
+  "description": "A handy indicator that displays the number of OScam clients connected to the card server.",
+  "background_page": "background.html",
+  "icons": { "16": "16.png",
+           "48": "48.png",
+          "128": "128.png" },
+  "browser_action": {
+    "default_title": "OScam Chrome Extension",
+    "default_icon": "16.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "http://*/",
+    "tabs"
+  ]
+}

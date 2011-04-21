@@ -1,0 +1,22 @@
+{
+  "extName": {
+  	"message": "OScam Chrome Extension",
+  	"description": "Extension name"
+	},
+  "extDescription": {
+  	"message": "A handy indicator that displays the number of OScam clients connected to the card server.",
+  	"description": "Extension Description"
+	},
+	"settings": {
+  	"message": "Settings",
+  	"description": "Settings"
+	},
+	"login": {
+  	"message": "Login",
+  	"description": "Login"
+	},
+	"password": {
+  	"message": "Password",
+  	"description": "Password"
+	}	
+}

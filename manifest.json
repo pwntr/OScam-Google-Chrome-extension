@@ -3,6 +3,7 @@
   "version": "0.1",
   "description": "A handy indicator that displays the number of OScam clients connected to the card server.",
   "background_page": "background.html",
+  "options_page": "options.html",
   "icons": { "16": "16.png",
            "48": "48.png",
           "128": "128.png" },

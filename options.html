@@ -15,6 +15,9 @@ function save_options() {
 	
 	var password = document.getElementById("password").value;
   localStorage["password"] = password;
+  
+  var beeponerror = document.getElementById("beeponerror").checked;
+  localStorage["beeponerror"] = beeponerror;
 	alert("Settings saved");
 }
 
@@ -44,6 +47,11 @@ function restore_options() {
   }
   document.getElementById("password").value = password;
 
+  var beeponerror = localStorage["beeponerror"];
+  if (!beeponerror) {
+    beeponerror = false;
+  }
+  document.getElementById("beeponerror").checked = beeponerror;
 }
 
 </script>
@@ -58,15 +66,15 @@ function restore_options() {
 		<td><input type="text" id="xmlurl" style="width:200px"></td>
 	</tr>
 	<tr>
-		<th align='left'>Username</th>
+		<th align='left'><script type="text/javascript"> document.write( chrome.i18n.getMessage("login") );</script></th>
 		<td><input disabled type="text" id="username" style="width:200px"></td>
 	</tr>	
 	<tr>
-		<th align='left'>Password</th>
+		<th align='left'><script type="text/javascript"> document.write( chrome.i18n.getMessage("password") );</script></th>
 		<td><input disabled type="text" id="password" style="width:200px"></td>
 	</tr>	
 	<tr>
-		<th align='left'>Update Interval in Seconds</th>
+		<th align='left'><script type="text/javascript"> document.write( chrome.i18n.getMessage("updateinterval") );</script></th>
 		<td>
 			<select id="pollInterval">
 				<option>10</option>
@@ -76,6 +84,10 @@ function restore_options() {
 			</select>
 		</td>
 	</tr>
+	<tr>
+		<th align='left'><script type="text/javascript"> document.write( chrome.i18n.getMessage("beeponerror") );</script></th>
+		<td><input type="checkbox" id="beeponerror"></td>
+	</tr>	
 </table>
 <button onclick="save_options()">Save</button>
 </body>

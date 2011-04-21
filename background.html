@@ -44,6 +44,7 @@ function init() {
 		//xhr = new XMLHttpRequest();
 		updateBadge();
 	} catch (err) {
+		playSound("beep.wav");
 		chrome.browserAction.setBadgeText({ text: "Error" });
 	}
 	timerId = window.setTimeout(init, pollInterval);
@@ -82,7 +83,11 @@ function updateBadge() {
   }
 }
 
-
+function playSound (url){
+    var audio=document.createElement("audio");
+    audio.src=url;
+    audio.play();	
+}
 function getNumberOfClients() {
 	return activeClientsString;
 }

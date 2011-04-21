@@ -18,5 +18,13 @@
 	"password": {
   	"message": "Password",
   	"description": "Password"
-	}	
+	},
+	"updateinterval": {
+  	"message": "Update Interval in Seconds",
+  	"description": "Update Interval in Seconds"
+	},
+	"beeponerror": {
+  	"message": "Beep on Error",
+  	"description": "Beep on Error"
+	}
 }

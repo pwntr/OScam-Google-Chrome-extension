@@ -30,21 +30,28 @@ chrome.browserAction.setBadgeText({ text: activeClientsString });
 
 function init() {
 
-	var pollInterval = localStorage["pollinterval"];
+	var pollInterval = 10;
+	try {
+		pollInterval = localStorage["pollinterval"];
+	} catch (err) {}
 	if ( pollInterval<10 ) pollInterval = 10;
 	pollInterval *= 1000;
 	xhr = new XMLHttpRequest();
 
-	try {
+	try { 
 		//xhr.open("GET", xmlURL, true, username, password);
-		xhr.open("GET", localStorage["xmlurl"] + "/oscamapi.html?part=status", false);
+		if ( localStorage["username"]!="" ) {
+			xhr.open("GET", localStorage["xmlurl"] + "/oscamapi.html?part=status", false, localStorage["username"], localStorage["password"]);
+		} else {
+			xhr.open("GET", localStorage["xmlurl"] + "/oscamapi.html?part=status", false);
+		}
 		//xhr.onreadystatechange = updateBadge();
 		xhr.send();
 		xml = xhr.responseXML;
 		//xhr = new XMLHttpRequest();
 		updateBadge();
 	} catch (err) {
-		playSound("beep.wav");
+		if ( localStorage["beeponerror"] == "true" ) playSound("beep.wav");
 		chrome.browserAction.setBadgeText({ text: "Error" });
 	}
 	timerId = window.setTimeout(init, pollInterval);

@@ -19,6 +19,8 @@ function save_options() {
   var beeponerror = document.getElementById("beeponerror").checked;
   localStorage["beeponerror"] = beeponerror;
 	alert("Settings saved");
+	//check to see if everything saved correctly
+	restore_options();
 }
 
 // Restores options from localStorage.
@@ -47,10 +49,11 @@ function restore_options() {
   }
   document.getElementById("password").value = password;
 
-  var beeponerror = localStorage["beeponerror"];
-  if (!beeponerror) {
-    beeponerror = false;
-  }
+	if ( localStorage["beeponerror"] == "true" ) {
+		var beeponerror = true;
+	} else {
+		var beeponerror = false;
+	}
   document.getElementById("beeponerror").checked = beeponerror;
 }
 
@@ -67,11 +70,11 @@ function restore_options() {
 	</tr>
 	<tr>
 		<th align='left'><script type="text/javascript"> document.write( chrome.i18n.getMessage("login") );</script></th>
-		<td><input disabled type="text" id="username" style="width:200px"></td>
+		<td><input type="text" id="username" style="width:200px"></td>
 	</tr>	
 	<tr>
 		<th align='left'><script type="text/javascript"> document.write( chrome.i18n.getMessage("password") );</script></th>
-		<td><input disabled type="text" id="password" style="width:200px"></td>
+		<td><input type="password" id="password" style="width:200px"></td>
 	</tr>	
 	<tr>
 		<th align='left'><script type="text/javascript"> document.write( chrome.i18n.getMessage("updateinterval") );</script></th>

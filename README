@@ -1,1 +1,9 @@
-Change background.html to fit your needs.
+Edit the options to fit your needs.
+
+Sample of URL to your card server:
+
+192.168.1.3:16001
+
+or in general:
+
+IP:Port

@@ -4,33 +4,16 @@
 </head>
 <body>
 
-<table style="width: 300px;">
+	<table style="width: 300px;">
 
-<tr>
-	<td>User:</td>
-	<td>Channel:</td>
-</tr>
+	<tr>
+		<td>User:</td>
+		<td>Channel:</td>
+	</tr>
 
-<script>
-var bkg = chrome.extension.getBackgroundPage();
-var num = bkg.getNumberOfClients();
-var names = bkg.getClientNames();
-var channels = bkg.getClientChannels();
+	<script type="text/javascript" src="popup.js"></script>
 
-for (i = 0; i < num; i++) {
-	document.write("<tr>");
-	document.write("<td nowrap>"+names[i]+"</td>");
-	document.write("<td nowrap>"+channels[i]+"</td>");
-	document.write("</tr>");
-}
-
-//var names = bkg.getClientNames();
-//var channels = bkg.getClientChannels();
-
-//document.writeln(names);
-</script>
-
-</table>
+	</table>
 
 </body>
 </html>

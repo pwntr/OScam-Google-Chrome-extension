@@ -1,8 +1,11 @@
 {
+  "manifest_version": 2;
   "name": "__MSG_extName__",
-  "version": "0.1",
+  "version": "0.2",
   "description": "__MSG_extDescription__",
-  "background_page": "background.html",
+  "background": {
+    "scripts": "background.js"
+  },
   "options_page": "options.html",
   "default_locale": "en",
   "icons": { "16": "16.png",
